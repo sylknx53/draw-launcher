@@ -1,5 +1,11 @@
 setTimeout(() => {
   const intro = document.getElementById("intro");
-  if (intro) intro.remove();
-  document.body.classList.remove("locked");
-}, 3000); // 3 saniye
+
+  intro.style.opacity = "0";
+
+  setTimeout(() => {
+    intro.remove();
+    document.body.classList.remove("locked");
+  }, 1200);
+
+}, 2200);
