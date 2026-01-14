@@ -5,26 +5,66 @@
   font-family: 'Orbitron', sans-serif;
 }
 
+/* BODY */
 body {
   background: black;
   color: #4fd1ff;
   text-align: center;
 }
 
+/* SITE LOCK (intro bitene kadar site gizli) */
+body.locked > *:not(#intro) {
+  display: none;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1.2s ease;
+}
+
+
+#intro h1 {
+  font-size: 90px;
+  color: #4fd1ff;
+  text-shadow: 0 0 30px #4fd1ff;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+/* INTRO GLOW */
+@keyframes glowPulse {
+  from {
+    opacity: 0.6;
+    text-shadow: 0 0 10px #4fd1ff;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 40px #4fd1ff;
+  }
+}
+
+/* HEADER */
 header {
   padding: 120px 20px;
 }
 
-h1 {
+header h1 {
   font-size: 80px;
   text-shadow: 0 0 20px #4fd1ff;
 }
 
-p {
+header p {
   margin: 20px 0;
   opacity: 0.8;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 30px;
@@ -40,15 +80,47 @@ p {
   color: black;
 }
 
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 80px 0;
-  font-size: 20px;
+/* SCREENSHOT */
+.screenshot-single {
+  padding: 100px 20px;
 }
 
+.screenshot-single h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px #4fd1ff;
+}
+
+.screenshot-single img {
+  max-width: 900px;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #4fd1ff;
+  box-shadow: 0 0 40px rgba(79, 209, 255, 0.4);
+}
+
+/* FOOTER */
 footer {
   padding: 30px;
   opacity: 0.5;
+}
+
+/* SOFT SITE APPEAR */
+header,
+.screenshot-single,
+footer {
+  animation: siteFadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* site açılış animasyonu */
+@keyframes siteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
