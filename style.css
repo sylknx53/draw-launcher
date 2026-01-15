@@ -12,7 +12,7 @@ body {
   text-align: center;
 }
 
-/* SITE LOCK (intro bitene kadar site gizli) */
+/* SITE LOCK */
 body.locked > *:not(#intro) {
   display: none;
 }
@@ -36,7 +36,6 @@ body.locked > *:not(#intro) {
   animation: glowPulse 1.5s infinite alternate;
 }
 
-/* INTRO GLOW */
 @keyframes glowPulse {
   from {
     opacity: 0.6;
@@ -79,59 +78,49 @@ header p {
   color: black;
 }
 
-/* ========================= */
-/* 🔷 ÜST KATEGORİ SİSTEMİ */
-/* ========================= */
+/* =============================== */
+/* ÜST KATEGORİ (DESTEK | HAKKIMIZDA) */
+/* =============================== */
 
-.top-categories {
+.shop-top-menu {
   display: flex;
   justify-content: center;
-  gap: 22px;
-  padding: 20px 10px;
-  margin-bottom: 40px;
-  border-top: 1px solid rgba(79, 209, 255, 0.2);
-  border-bottom: 1px solid rgba(79, 209, 255, 0.2);
-  background: linear-gradient(
-    180deg,
-    rgba(10, 25, 45, 0.85),
-    rgba(0, 0, 0, 0.95)
-  );
-  box-shadow: 0 0 25px rgba(79, 209, 255, 0.15);
+  gap: 50px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(79, 209, 255, 0.25);
+  border-bottom: 1px solid rgba(79, 209, 255, 0.25);
+  background: black;
 }
 
-.category {
-  padding: 10px 26px;
-  border-radius: 16px;
-  border: 1px solid rgba(79, 209, 255, 0.35);
+.shop-top-menu a {
   color: #4fd1ff;
-  font-size: 14px;
-  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 6px;
+  opacity: 0.85;
   transition: 0.25s ease;
-  text-shadow: 0 0 8px rgba(79, 209, 255, 0.6);
 }
 
-.category:hover {
-  background: rgba(79, 209, 255, 0.15);
-  box-shadow: 0 0 16px rgba(79, 209, 255, 0.45);
+.shop-top-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #4fd1ff;
+  box-shadow: 0 0 10px #4fd1ff;
+  transition: 0.25s ease;
 }
 
-.category.active {
-  background: rgba(79, 209, 255, 0.3);
-  box-shadow: 0 0 25px rgba(79, 209, 255, 0.75);
-  color: white;
+.shop-top-menu a:hover {
+  opacity: 1;
 }
 
-/* MOBİL KATEGORİ */
-@media (max-width: 768px) {
-  .top-categories {
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 16px;
-  }
-
-  .category {
-    white-space: nowrap;
-  }
+.shop-top-menu a:hover::after {
+  width: 100%;
 }
 
 /* SCREENSHOT */
@@ -153,6 +142,24 @@ header p {
   box-shadow: 0 0 40px rgba(79, 209, 255, 0.4);
 }
 
+/* INFO SECTIONS */
+.info-section {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.info-section h2 {
+  font-size: 34px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px #4fd1ff;
+}
+
+.info-section p {
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
 /* FOOTER */
 footer {
   padding: 30px;
@@ -161,14 +168,14 @@ footer {
 
 /* SOFT SITE APPEAR */
 header,
-.top-categories,
+.shop-top-menu,
 .screenshot-single,
+.info-section,
 footer {
   animation: siteFadeIn 1.2s ease forwards;
   opacity: 0;
 }
 
-/* site açılış animasyonu */
 @keyframes siteFadeIn {
   from {
     opacity: 0;
@@ -178,63 +185,4 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
-/* =============================== */
-/* 🛒 ALIŞVERİŞ SİTESİ ÜST MENÜ */
-/* =============================== */
-
-.shop-top-menu {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 18px 0;
-  border-top: 1px solid rgba(79, 209, 255, 0.2);
-  border-bottom: 1px solid rgba(79, 209, 255, 0.2);
-  background: black;
 }
-
-.shop-top-menu a {
-  color: #4fd1ff;
-  text-decoration: none;
-  font-size: 15px;
-  padding-bottom: 6px;
-  position: relative;
-  opacity: 0.85;
-  transition: 0.25s ease;
-}
-
-/* hover alt çizgi */
-.shop-top-menu a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: #4fd1ff;
-  box-shadow: 0 0 12px #4fd1ff;
-  transition: 0.25s ease;
-}
-
-.shop-top-menu a:hover {
-  opacity: 1;
-}
-
-.shop-top-menu a:hover::after,
-.shop-top-menu a.active::after {
-  width: 100%;
-}
-
-/* mobil uyum */
-@media (max-width: 768px) {
-  .shop-top-menu {
-    overflow-x: auto;
-    gap: 24px;
-    justify-content: flex-start;
-    padding: 16px;
-  }
-
-  .shop-top-menu a {
-    white-space: nowrap;
-  }
-}
-
