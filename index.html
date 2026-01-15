@@ -7,21 +7,15 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<!-- ÜST KATEGORİ MENÜ (ALIŞVERİŞ SİTESİ TARZI) -->
-<nav class="shop-top-menu">
-  <a href="#">Destek</a>
-  <a href="#">Hakkımızda</a>
-</nav>
-
 
 <body class="locked">
 
-  <!-- INTRO ANIMATION -->
+  <!-- INTRO -->
   <div id="intro">
     <h1>DRAW</h1>
   </div>
 
-  <!-- MAIN SITE -->
+  <!-- HEADER -->
   <header>
     <h1>DRAW</h1>
     <p>Next-Gen Game Launcher</p>
@@ -30,13 +24,10 @@
     </a>
   </header>
 
-  <!-- 🔷 ÜST KATEGORİ BÖLÜMÜ -->
-  <nav class="top-categories">
-    <div class="category active">Tümü</div>
-    <div class="category">Oyunlar</div>
-    <div class="category">Launcher</div>
-    <div class="category">Araçlar</div>
-    <div class="category">Yüklü</div>
+  <!-- ÜST KATEGORİ (ALIŞVERİŞ SİTESİ TARZI) -->
+  <nav class="shop-top-menu">
+    <a href="#destek">Destek</a>
+    <a href="#hakkimizda">Hakkımızda</a>
   </nav>
 
   <!-- CONTENT -->
@@ -45,26 +36,28 @@
     <img src="screenshot.png" alt="DRAW Launcher Screenshot">
   </section>
 
+  <!-- DESTEK -->
+  <section id="destek" class="info-section">
+    <h2>Destek</h2>
+    <p>Her türlü soru ve destek talepleriniz için bizimle iletişime geçebilirsiniz.</p>
+    <p>E-posta: support@drawlauncher.com</p>
+  </section>
+
+  <!-- HAKKIMIZDA -->
+  <section id="hakkimizda" class="info-section">
+    <h2>Hakkımızda</h2>
+    <p>
+      DRAW Launcher, yeni nesil oyun deneyimini sade, hızlı ve modern bir arayüzle
+      sunmak için geliştirilmiş bir masaüstü launcher projesidir.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     © 2026 DRAW Launcher
   </footer>
 
   <script src="intro.js"></script>
 
-  <!-- KATEGORİ AKTİF JS -->
-  <script>
-    const categories = document.querySelectorAll('.category');
-
-    categories.forEach(cat => {
-      cat.addEventListener('click', () => {
-        categories.forEach(c => c.classList.remove('active'));
-        cat.classList.add('active');
-      });
-    });
-  </script>
-
 </body>
 </html>
-
-
-
