@@ -29,7 +29,6 @@ body.locked > *:not(#intro) {
   transition: opacity 1.2s ease;
 }
 
-
 #intro h1 {
   font-size: 90px;
   color: #4fd1ff;
@@ -51,7 +50,7 @@ body.locked > *:not(#intro) {
 
 /* HEADER */
 header {
-  padding: 120px 20px;
+  padding: 120px 20px 60px;
 }
 
 header h1 {
@@ -78,6 +77,61 @@ header p {
 .btn:hover {
   background: #4fd1ff;
   color: black;
+}
+
+/* ========================= */
+/* 🔷 ÜST KATEGORİ SİSTEMİ */
+/* ========================= */
+
+.top-categories {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding: 20px 10px;
+  margin-bottom: 40px;
+  border-top: 1px solid rgba(79, 209, 255, 0.2);
+  border-bottom: 1px solid rgba(79, 209, 255, 0.2);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 25, 45, 0.85),
+    rgba(0, 0, 0, 0.95)
+  );
+  box-shadow: 0 0 25px rgba(79, 209, 255, 0.15);
+}
+
+.category {
+  padding: 10px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(79, 209, 255, 0.35);
+  color: #4fd1ff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-shadow: 0 0 8px rgba(79, 209, 255, 0.6);
+}
+
+.category:hover {
+  background: rgba(79, 209, 255, 0.15);
+  box-shadow: 0 0 16px rgba(79, 209, 255, 0.45);
+}
+
+.category.active {
+  background: rgba(79, 209, 255, 0.3);
+  box-shadow: 0 0 25px rgba(79, 209, 255, 0.75);
+  color: white;
+}
+
+/* MOBİL KATEGORİ */
+@media (max-width: 768px) {
+  .top-categories {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .category {
+    white-space: nowrap;
+  }
 }
 
 /* SCREENSHOT */
@@ -107,6 +161,7 @@ footer {
 
 /* SOFT SITE APPEAR */
 header,
+.top-categories,
 .screenshot-single,
 footer {
   animation: siteFadeIn 1.2s ease forwards;
@@ -124,5 +179,3 @@ footer {
     transform: translateY(0);
   }
 }
-
-
