@@ -178,3 +178,63 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+/* =============================== */
+/* 🛒 ALIŞVERİŞ SİTESİ ÜST MENÜ */
+/* =============================== */
+
+.shop-top-menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(79, 209, 255, 0.2);
+  border-bottom: 1px solid rgba(79, 209, 255, 0.2);
+  background: black;
+}
+
+.shop-top-menu a {
+  color: #4fd1ff;
+  text-decoration: none;
+  font-size: 15px;
+  padding-bottom: 6px;
+  position: relative;
+  opacity: 0.85;
+  transition: 0.25s ease;
+}
+
+/* hover alt çizgi */
+.shop-top-menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #4fd1ff;
+  box-shadow: 0 0 12px #4fd1ff;
+  transition: 0.25s ease;
+}
+
+.shop-top-menu a:hover {
+  opacity: 1;
+}
+
+.shop-top-menu a:hover::after,
+.shop-top-menu a.active::after {
+  width: 100%;
+}
+
+/* mobil uyum */
+@media (max-width: 768px) {
+  .shop-top-menu {
+    overflow-x: auto;
+    gap: 24px;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .shop-top-menu a {
+    white-space: nowrap;
+  }
+}
+
