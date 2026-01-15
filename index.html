@@ -20,11 +20,20 @@
     <h1>DRAW</h1>
     <p>Next-Gen Game Launcher</p>
     <a href="https://github.com/sylknx53/draw-launcher/releases/download/v1.0.0/Draw.Setup.exe" class="btn">
-  Download
-</a>
-
+      Download
+    </a>
   </header>
 
+  <!-- 🔷 ÜST KATEGORİ BÖLÜMÜ -->
+  <nav class="top-categories">
+    <div class="category active">Tümü</div>
+    <div class="category">Oyunlar</div>
+    <div class="category">Launcher</div>
+    <div class="category">Araçlar</div>
+    <div class="category">Yüklü</div>
+  </nav>
+
+  <!-- CONTENT -->
   <section class="screenshot-single">
     <h2>Launcher Görünümü</h2>
     <img src="screenshot.png" alt="DRAW Launcher Screenshot">
@@ -35,6 +44,18 @@
   </footer>
 
   <script src="intro.js"></script>
+
+  <!-- KATEGORİ AKTİF JS -->
+  <script>
+    const categories = document.querySelectorAll('.category');
+
+    categories.forEach(cat => {
+      cat.addEventListener('click', () => {
+        categories.forEach(c => c.classList.remove('active'));
+        cat.classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
-
